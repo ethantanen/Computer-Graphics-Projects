@@ -1,0 +1,39 @@
+import java.awt.geom.Ellipse2D;
+
+public class Circle {
+	
+	double x,y,r;
+	
+	Circle parent;
+	Circle child;
+	
+	public Circle(double x_, double y_, double r_){
+		x = x_;
+		y = y_;
+		r = r_;
+	}
+	
+	public Circle(Circle p, double r_){
+		p.child = this;
+		parent = p;
+		r = r_;
+		x = parent.x + parent.r + r;
+		y = parent.y + parent.r + r;
+		
+		System.out.println("XY: " + x + " " + y);
+		
+		
+		
+	}
+	
+	
+	public Ellipse2D getCircle(){
+		System.out.println("X: " + x + " Y: " + y);
+		return new Ellipse2D.Double(x-r,y-parent.r,r*2,r*2);
+	}
+	
+	public void update(){
+		
+	}
+
+}

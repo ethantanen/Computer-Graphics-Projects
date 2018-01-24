@@ -1,0 +1,13 @@
+
+public class Circle {
+	
+	double x,y;
+	double r;
+	
+	public Circle(double x_, double y_, double r_){
+		x = x_;
+		y = y_;
+		r = r_;
+	}
+
+}

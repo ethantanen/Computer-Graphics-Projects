@@ -1,0 +1,32 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.geom.*;
+
+public class Canvas extends JPanel {
+	
+	Graphics2D g2d;
+	Pieces pieces;
+	Transform transformer;
+	
+	public Canvas(){
+		setPreferredSize(new Dimension(600,600));
+		setBackground(Color.white);
+		
+		pieces = new Pieces();
+		transformer = new Transform();	
+	}
+	
+	public void paintComponent(Graphics z) {
+
+		super.paintComponent(z);
+		g2d = (Graphics2D) z;
+		
+		Path2D path2 = pieces.getBrow();
+				
+		Path2D path = transformer.translate(path2, 100, 100);
+		
+		g2d.draw(path);
+		
+	}
+
+}

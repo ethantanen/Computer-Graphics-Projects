@@ -1,0 +1,48 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class GUI extends JPanel implements ActionListener{
+	
+	//GUI needs some notion of the canvas to call repaint 
+	Canvas canvas;
+	
+	JButton[] buttons;
+	String[] 	functions;
+	JTextField text; 
+
+	public GUI(Canvas c) {
+		setPreferredSize(new Dimension(200,600));
+		setBackground(Color.gray);
+		
+		buttons = new JButton[3];
+		functions = new String[]{"cos(aθ)","aθ",""};
+		canvas = c;
+		text = new JTextField("input 'a'",10);
+		
+		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+		
+		addButtons();
+		add(text);
+
+	}
+
+	private void addButtons(){
+		for(int i=0; i<buttons.length; i++){
+			buttons[i] = new JButton(functions[i]);
+			buttons[i].addActionListener(this);
+			add(buttons[i]);
+		}
+	}
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		
+		//get the text of the button that was triggered 
+		String b = ((JButton)e.getSource()).getText();
+		double num = Double.parseDouble(text.getText());
+		
+		canvas.setGraph(b,num);
+		
+	}
+}

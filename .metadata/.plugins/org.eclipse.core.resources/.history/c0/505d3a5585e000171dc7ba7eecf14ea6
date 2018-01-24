@@ -1,0 +1,17 @@
+import java.util.ArrayList;
+
+public class Hypocycloid {
+	
+	ArrayList<Circle> c;
+	
+	public Hypocycloid(){
+		c = new ArrayList<>();
+	
+		
+		
+		
+		
+	}
+	
+
+}

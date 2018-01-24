@@ -1,0 +1,49 @@
+import java.awt.geom.AffineTransform;
+import java.awt.geom.Path2D;
+
+public class Transform {
+
+	
+	public Transform(){
+		
+		
+	}
+	
+	public Path2D translate(Path2D shape, double x, double y){
+		
+		AffineTransform t = new AffineTransform();
+		t.translate(x, y);
+		shape.transform(t);
+		System.out.println("HERE");
+		return shape;
+	}
+	
+	public Path2D rotate(Path2D shape, double radians){
+		
+		AffineTransform t = new AffineTransform();
+		//t.translate(0, 0)
+		
+		int x = shape.getBounds2D().getX();
+		int y = shape.getBounds2D().getY();
+		
+		
+		t.rotate(radians, anchorx, anchory);
+		//translate object to origin
+		//rotate object
+		//return object using inverse 
+		
+		
+		return shape;
+	}
+	
+	public Path2D scale(Path2D shape){
+		
+		AffineTransform t = new AffineTransform();
+		
+
+		
+		return shape;
+	}
+	
+	
+}

@@ -1,0 +1,31 @@
+import java.awt.geom.Ellipse2D;
+
+public class Circle {
+	
+	double x,y,r;
+	
+	Circle parent;
+	
+	public Circle(double x_, double y_, double r_){
+		x = x_;
+		y = y_;
+		r = r_;
+	}
+	
+	public Circle(Circle p, double r_){
+		parent = p;
+		r = r_;
+		x = parent.x + parent.r + r;
+		y = parent.y + parent.r + r;
+	}
+	
+	
+	public Ellipse2D getCircle(){
+		return new Ellipse2D.Double(x-r,y-r,r*2,r*2);
+	}
+	
+	public void update(){
+		
+	}
+
+}

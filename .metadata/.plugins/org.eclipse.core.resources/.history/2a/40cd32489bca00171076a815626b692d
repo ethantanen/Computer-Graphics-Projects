@@ -1,0 +1,16 @@
+
+public class Particle {
+	
+	double loc;
+	double vel;
+	double acc;
+	double col;
+	
+	public Particle(double l_,double v_, double a_, double c_){
+		loc = l_;
+		vel = v_;
+		acc = a_;
+		col = c_;
+	}
+
+}

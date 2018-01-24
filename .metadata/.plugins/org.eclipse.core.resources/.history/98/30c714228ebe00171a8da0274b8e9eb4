@@ -1,0 +1,43 @@
+import java.awt.geom.Path2D;
+
+import javax.swing.JFrame;
+
+public class Polar {
+	
+	double increment = .01;  //(2 *Math.PI / 100);
+	int total = 300;
+	int i;
+	
+	double polar_r[],cartesian[][];
+	
+	public Polar(){	
+		polar_r = new double[total];
+		cartesian = new double[total][2];
+	}
+	
+	public double[][] cosOfScalarTheta(double scalar){
+		
+		for(i=0; i<total; i++){
+			polar_r[i] = Math.cos(scalar*(i*increment));	
+		}
+		
+		convertPolarToCart();
+		
+		return cartesian; 	
+	}
+
+
+	public double[][] scalarTheta(double num) {
+		for(i=0; i<total; i++){
+			polar_r[i] = num * (*increment);
+		}
+	}
+
+	private void convertPolarToCart() {
+		for(i=0; i<total; i++){
+			cartesian[i][0] = polar_r[i] * Math.cos(i*increment);
+			cartesian[i][1] = polar_r[i] * Math.sin(i*increment);	
+		}
+	}
+	
+}

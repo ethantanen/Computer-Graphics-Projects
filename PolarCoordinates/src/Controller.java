@@ -1,0 +1,25 @@
+import java.awt.*;
+import javax.swing.*;
+
+public class Controller {
+	
+	public static void main(String args[]){
+		
+		JFrame frame = new JFrame();
+		
+		frame.setTitle("Polar Coordinates");
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		Container c = frame.getContentPane();
+		
+		Canvas canvas = new Canvas();
+		GUI gui = new GUI(canvas);		
+		
+		c.add(gui,BorderLayout.WEST);
+		c.add(canvas,BorderLayout.CENTER);
+		
+		frame.pack();
+		frame.setVisible(true);
+		
+	}
+}

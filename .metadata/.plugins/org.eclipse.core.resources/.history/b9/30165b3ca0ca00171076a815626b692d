@@ -1,0 +1,43 @@
+import java.util.ArrayList;
+import java.util.Random;
+
+public class ParticleSystem {
+	
+	double lifespan;
+	double[] emitter_loc; 
+	
+	double current_time;
+	double elapsed_time;
+	
+	ArrayList<Particle> particles;
+	
+	Random rand;
+	
+	
+	public ParticleSystem(){
+		
+		lifespan = 255;
+		emitter_loc = new double[]{0,0};
+		
+		current_time = System.currentTimeMillis();
+		
+		particles = new ArrayList<>();
+		
+		rand = new Random();
+		
+		
+	}
+	
+	
+	public void emit(){
+		
+		elapsed_time = (System.currentTimeMillis() - current_time)/1000;
+
+		if(elapsed_time > 3){
+			particles.add(new Particle(emitter_loc,new double[]{rand.nextInt(),rand.nextInt()},new double[]{1,1},rand.nextInt(255)));
+		}
+		
+		current_time = System.currentTimeMillis();	
+	}
+
+}

@@ -1,0 +1,42 @@
+import java.awt.BorderLayout;
+import java.awt.Container;
+import javax.swing.JFrame;
+
+public class Controller {
+	
+	
+	public static void main(String[] args){
+		
+		Particle p = new Particle(null,null,null,0);
+		
+		double[] a = p.add(new double[]{1, 1},new double[]{2,2});
+		
+		Utilities u =new Utilities();
+		u.printV(a);
+		/*
+		ParticleSystem p = new ParticleSystem();
+		
+		p.emit();
+		*/
+		
+		/*
+		//create jframe
+		JFrame frame = new JFrame();
+		frame.setTitle("Particle System");
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		//instantie canvas and gui
+		Canvas canvas = new Canvas();
+		GUI gui = new GUI(canvas);
+		
+		//add canvas and gui to jframe 
+		Container c = frame.getContentPane();
+		c.setLayout(new BorderLayout());
+		c.add(canvas, BorderLayout.CENTER);
+		c.add(gui,BorderLayout.WEST);
+		
+		frame.pack();
+		frame.setVisible(true);
+	*/
+	}
+}

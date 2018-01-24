@@ -1,0 +1,50 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.geom.*;
+
+public class Canvas extends JPanel {
+	
+	Graphics2D g2d;
+	Pieces pieces;
+	Transform transformer;
+	Path2D feature;
+	
+	public Canvas(){
+		setPreferredSize(new Dimension(600,600));
+		setBackground(Color.white);
+		
+		pieces = new Pieces();
+		transformer = new Transform();	
+	}
+	
+	public void paintComponent(Graphics z) {
+
+		super.paintComponent(z);
+		g2d = (Graphics2D) z;
+		
+				
+		g2d.draw();
+		
+	}
+	
+	public void setFeature(String f){
+		switch(f){
+			case "face": feature = pieces.getFace(); break;
+			case "eye": feature = pieces.getEye(); break;
+			case "nose": feature = pieces.getNose(); break;
+			case "ear": feature = pieces.getEar(); break;
+			case "brow": feature = pieces.getBrow(); break;
+		}
+		repaint();	
+	}
+	
+	public void moveFeature(String m){
+		switch(m){
+			case "left":
+			case "right":
+			case "up":
+			case "down":
+		}
+	}
+
+}

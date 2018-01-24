@@ -1,0 +1,28 @@
+
+public class ParticleSystem {
+	
+	double lifespan;
+	double[] emitter_loc; 
+	
+	double start_time;
+	double current_time;
+	
+	public ParticleSystem(){
+		
+		lifespan = 255;
+		emitter_loc = new double[]{0,0};
+		
+	}
+	
+	
+	public void emit(){
+		
+	
+		
+		if
+		
+		
+		
+	}
+
+}

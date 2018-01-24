@@ -1,0 +1,50 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.geom.Path2D;
+
+public class Canvas extends JPanel {
+	
+	Graphics2D g2d;
+	Polar polar;
+	Grapher grapher;
+	double[][] coordinates;
+	
+	public Canvas(){
+		
+		setPreferredSize(new Dimension(600,600));
+		setBackground(Color.green);
+		
+		polar = new Polar();
+		grapher = new Grapher();
+	
+	}
+	
+	public void paintComponent(Graphics z){
+		
+		super.paintComponent(z);
+		g2d = (Graphics2D) z;
+		
+		g2d.translate(getWidth()/2,getHeight()/2);
+		
+		if(coordinates == null)
+			return;
+		
+		Path2D path = grapher.makeGraph(coordinates);
+		g2d.draw(path);
+		
+	
+	}
+
+	public void setGraph(String b, double num) {
+		
+		System.out.println("B: " + b);
+		
+		switch(b){
+			case "cos(aθ)": coordinates = polar.cosOfScalarTheta(num); System.out.println("here");break;
+			case "aθ": coordinates = polar.scalarTheta(num);break;
+		
+		}
+		
+	}
+
+}
